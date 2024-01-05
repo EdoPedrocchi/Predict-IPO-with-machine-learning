@@ -1,0 +1,953 @@
+###predict IPO with machine learning, a project by Edoardo Pedrocchi####
+############################################################################
+
+
+
+import yfinance as yf
+import pandas as pd
+
+############the first part is about to create the dataset#############
+
+#Let's start with the IPOs that were successful#
+
+#1 comapny#
+variable = yf.Ticker("RBLX")
+
+df1= variable.financials[['2020-12-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2020-12-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2020-12-31']/ df2.loc['Invested Capital', '2020-12-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2020-12-31']/ df1.loc['Total Revenue', '2020-12-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2020-12-31']/ df2.loc['Invested Capital', '2020-12-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2020-12-31']/ df1.loc['Total Revenue', '2020-12-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2020-12-31']/ (df1.loc['Total Revenue', '2020-12-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+# Creazione del DataFrame ratio
+ratio1 = pd.DataFrame(ratio_data, index=["Company 1"])
+
+#COMPANY 2#
+variable = yf.Ticker("COMP")
+
+df1= variable.financials[['2020-12-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2020-12-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2020-12-31']/ df2.loc['Invested Capital', '2020-12-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2020-12-31']/ df1.loc['Total Revenue', '2020-12-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2020-12-31']/ df2.loc['Invested Capital', '2020-12-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2020-12-31']/ df1.loc['Total Revenue', '2020-12-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2020-12-31']/ (df1.loc['Total Revenue', '2020-12-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio2 = pd.DataFrame(ratio_data, index=["Company 2"])
+
+#COMPANY 3#
+variable = yf.Ticker("APP")
+
+df1= variable.financials[['2020-12-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2020-12-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2020-12-31']/ df2.loc['Invested Capital', '2020-12-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2020-12-31']/ df1.loc['Total Revenue', '2020-12-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2020-12-31']/ df2.loc['Invested Capital', '2020-12-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2020-12-31']/ df1.loc['Total Revenue', '2020-12-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2020-12-31']/ (df1.loc['Total Revenue', '2020-12-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio3 = pd.DataFrame(ratio_data, index=["Company 3"])
+
+#company4#
+
+variable = yf.Ticker("FRSH")
+
+df1= variable.financials[['2020-12-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2020-12-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2020-12-31']/ df2.loc['Invested Capital', '2020-12-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2020-12-31']/ df1.loc['Total Revenue', '2020-12-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2020-12-31']/ df2.loc['Invested Capital', '2020-12-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2020-12-31']/ df1.loc['Total Revenue', '2020-12-31']
+print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2020-12-31']/ (df1.loc['Total Revenue', '2020-12-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio4 = pd.DataFrame(ratio_data, index=["Company 4"])
+
+#COMPANY 5#
+
+variable = yf.Ticker("WRBY")
+
+df1= variable.financials[['2020-12-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2020-12-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2020-12-31']/ df2.loc['Invested Capital', '2020-12-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2020-12-31']/ df1.loc['Total Revenue', '2020-12-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2020-12-31']/ df2.loc['Invested Capital', '2020-12-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2020-12-31']/ df1.loc['Total Revenue', '2020-12-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2020-12-31']/ (df1.loc['Total Revenue', '2020-12-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio5 = pd.DataFrame(ratio_data, index=["Company 5"])
+
+#company 6#
+variable = yf.Ticker("UDMY")
+
+df1= variable.financials[['2020-12-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2020-12-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2020-12-31']/ df2.loc['Invested Capital', '2020-12-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2020-12-31']/ df1.loc['Total Revenue', '2020-12-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2020-12-31']/ df2.loc['Invested Capital', '2020-12-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2020-12-31']/ df1.loc['Total Revenue', '2020-12-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2020-12-31']/ (df1.loc['Total Revenue', '2020-12-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio6 = pd.DataFrame(ratio_data, index=["Company 6"])
+
+
+######################2022##########################################
+
+#COMPANY7#
+import yfinance as yf
+import pandas as pd
+
+#1 comapny#
+variable = yf.Ticker("JKS")
+
+df1= variable.financials[['2021-12-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2021-12-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2021-12-31']/ df2.loc['Invested Capital', '2021-12-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2021-12-31']/ df1.loc['Total Revenue', '2021-12-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2021-12-31']/ df2.loc['Invested Capital', '2021-12-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2021-12-31']/ df1.loc['Total Revenue', '2021-12-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2021-12-31']/ (df1.loc['Total Revenue', '2021-12-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+# Creazione del DataFrame ratio
+ratio7= pd.DataFrame(ratio_data, index=["Company 7"])
+
+
+#2023#
+
+#company 16#
+
+variable = yf.Ticker("DOMS.NS")
+
+df1= variable.financials[['2022-03-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2022-03-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2022-03-31']/ df2.loc['Invested Capital', '2022-03-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2022-03-31']/ df1.loc['Total Revenue', '2022-03-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2022-03-31']/ df2.loc['Invested Capital', '2022-03-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2022-03-31']/ df1.loc['Total Revenue', '2022-03-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2022-03-31']/ (df1.loc['Total Revenue', '2022-03-31']/360)
+#print(DSO)
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio16 = pd.DataFrame(ratio_data, index=["Company 16"])
+
+
+#company 17#
+
+variable = yf.Ticker("IDEAFORGE.NS")
+
+df1= variable.financials[['2022-03-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2022-03-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2022-03-31']/ df2.loc['Invested Capital', '2022-03-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2022-03-31']/ df1.loc['Total Revenue', '2022-03-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2022-03-31']/ df2.loc['Invested Capital', '2022-03-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2022-03-31']/ df1.loc['Total Revenue', '2022-03-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2022-03-31']/ (df1.loc['Total Revenue', '2022-03-31']/360)
+#print(DSO)
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio17 = pd.DataFrame(ratio_data, index=["Company 17"])
+
+
+
+
+#merge anmd create the df with only the succesful IPO#
+ratio_success = pd.concat([ratio1, ratio2,ratio3,ratio4,ratio5,ratio6,ratio7,ratio16,ratio17])
+
+ratio_success['IPO'] = 1
+print(ratio_success)
+
+###########let's continue with the IPOs that were failures##############
+
+#comapany 8#
+variable = yf.Ticker("WINDLAS.NS")
+
+df1= variable.financials[['2021-03-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2021-03-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2021-03-31']/ df2.loc['Invested Capital', '2021-03-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2021-03-31']/ df1.loc['Total Revenue', '2021-03-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2021-03-31']/ df2.loc['Invested Capital', '2021-03-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2021-03-31']/ df1.loc['Total Revenue', '2021-03-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2021-03-31']/ (df1.loc['Total Revenue', '2021-03-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio8 = pd.DataFrame(ratio_data, index=["Company 8"])
+
+
+#company 9#
+
+
+variable = yf.Ticker("PAYTM.NS")
+
+df1= variable.financials[['2021-03-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2021-03-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2021-03-31']/ df2.loc['Invested Capital', '2021-03-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2021-03-31']/ df1.loc['Total Revenue', '2021-03-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2021-03-31']/ df2.loc['Invested Capital', '2021-03-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2021-03-31']/ df1.loc['Total Revenue', '2021-03-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2021-03-31']/ (df1.loc['Total Revenue', '2021-03-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio9 = pd.DataFrame(ratio_data, index=["Company 9"])
+
+
+#company 10#
+
+variable = yf.Ticker("ZOMATO.NS")
+
+df1= variable.financials[['2021-03-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2021-03-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2021-03-31']/ df2.loc['Invested Capital', '2021-03-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2021-03-31']/ df1.loc['Total Revenue', '2021-03-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2021-03-31']/ df2.loc['Invested Capital', '2021-03-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2021-03-31']/ df1.loc['Total Revenue', '2021-03-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2021-03-31']/ (df1.loc['Total Revenue', '2021-03-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio10 = pd.DataFrame(ratio_data, index=["Company 10"])
+
+
+#company 11#
+variable = yf.Ticker("POLICYBZR.NS")
+
+df1= variable.financials[['2021-03-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2021-03-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2021-03-31']/ df2.loc['Invested Capital', '2021-03-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2021-03-31']/ df1.loc['Total Revenue', '2021-03-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2021-03-31']/ df2.loc['Invested Capital', '2021-03-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2021-03-31']/ df1.loc['Total Revenue', '2021-03-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2021-03-31']/ (df1.loc['Total Revenue', '2021-03-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio11= pd.DataFrame(ratio_data, index=["Company 11"])
+
+
+#company 12#
+
+variable = yf.Ticker("AGSTRA.NS")
+
+df1= variable.financials[['2021-03-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2021-03-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2021-03-31']/ df2.loc['Invested Capital', '2021-03-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2021-03-31']/ df1.loc['Total Revenue', '2021-03-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2021-03-31']/ df2.loc['Invested Capital', '2021-03-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2021-03-31']/ df1.loc['Total Revenue', '2021-03-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2021-03-31']/ (df1.loc['Total Revenue', '2021-03-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio12 = pd.DataFrame(ratio_data, index=["Company 12"])
+
+#2023#
+
+#company 13#
+
+variable = yf.Ticker("AVALON.NS")
+
+df1= variable.financials[['2022-03-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2022-03-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2022-03-31']/ df2.loc['Invested Capital', '2022-03-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2022-03-31']/ df1.loc['Total Revenue', '2022-03-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2022-03-31']/ df2.loc['Invested Capital', '2022-03-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2022-03-31']/ df1.loc['Total Revenue', '2022-03-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2022-03-31']/ (df1.loc['Total Revenue', '2022-03-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio13 = pd.DataFrame(ratio_data, index=["Company 13"])
+
+#company14#
+
+variable = yf.Ticker("IRMENERGY.NS")
+
+df1= variable.financials[['2022-03-31']].copy()
+
+values1 = ["Total Revenue", "EBITDA", "EBIT", "Net Income"]
+df1= df1.loc[values1]
+#print(df1)
+
+
+df2 = variable.balance_sheet[['2022-03-31']].copy()
+
+values2 = ["Net PPE","Accounts Receivable","Current Liabilities","Current Assets","Invested Capital","Stockholders Equity"]
+df2= df2.loc[values2]
+#print(df2)
+
+
+ROI= df1.loc['EBIT', '2022-03-31']/ df2.loc['Invested Capital', '2022-03-31']
+#print(ROI)
+
+ROS= df1.loc['EBIT', '2022-03-31']/ df1.loc['Total Revenue', '2022-03-31']
+#print(ROS)
+
+capital_turnover = df1.loc['Total Revenue', '2022-03-31']/ df2.loc['Invested Capital', '2022-03-31']
+#print(capital_turnover)
+
+ebitda_analysis = df1.loc['EBITDA', '2022-03-31']/ df1.loc['Total Revenue', '2022-03-31']
+#print(ebitda_analysis)
+
+DSO = df2.loc['Accounts Receivable', '2022-03-31']/ (df1.loc['Total Revenue', '2022-03-31']/360)
+#print(DSO)
+
+
+
+
+ratio_data = {
+    "ROI": [ROI],
+    "ROS": [ROS],
+    "Capital Turnover": [capital_turnover],
+    "EBITDA Analysis": [ebitda_analysis],
+    "DSO": [DSO],
+ 
+}
+
+ratio14 = pd.DataFrame(ratio_data, index=["Company 14"])
+
+
+#merge anmd create the df with only the failure IPO#
+ratio_fail = pd.concat([ratio8, ratio9,ratio10,ratio11,ratio12,ratio13,ratio14])
+
+ratio_fail['IPO'] = 0
+print(ratio_fail)
+
+
+#merge the 2 ratios to create the dataset for the ML models#
+df_ratio = pd.concat([ratio_fail,ratio_success])
+
+print(df_ratio)
+
+
+
+
+
+
+##########################let's start with the analysis########################
+
+import matplotlib.pyplot as plt
+
+
+####visualize the distribution of each variable###
+
+import seaborn as sns
+
+#success#
+# histplot#
+for col in ratio_success.columns:
+    plt.figure(figsize=(8, 6))
+    sns.histplot(ratio_success[col], bins=20, kde=True)
+    plt.title(f'{col}')
+    plt.show()
+
+# Boxplot fot identify outlier#
+for col in ratio_success.columns:
+    plt.figure(figsize=(8, 6))
+    sns.boxplot(x=ratio_success[col])
+    plt.title(f'Boxplot {col}')
+    plt.show()
+
+
+#failure#
+# histplot#
+for col in ratio_fail.columns:
+    plt.figure(figsize=(8, 6))
+    sns.histplot(ratio_fail[col], bins=20, kde=True, color="darkred")
+    plt.title(f'{col}')
+    plt.show()
+
+# Boxplot fot identify outlier#
+for col in ratio_fail.columns:
+    plt.figure(figsize=(8, 6))
+    sns.boxplot(x=ratio_fail[col])
+    plt.title(f'Boxplot {col}')
+    plt.show()
+
+
+#####correlation analysis#####
+
+#correlation matrix and scatter plot (success)#
+correlation_matrix = ratio_success.drop(columns=['IPO']).corr()
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
+plt.title('correlation_matrix success')
+plt.show()
+
+sns.pairplot(ratio_success.drop(columns=['IPO']))
+plt.suptitle('Scatter Plot success', y=1.02)
+plt.show()
+
+#correlation matrix and scatter plot (fail)#
+correlation_matrix = ratio_success.drop(columns=['IPO']).corr()
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
+plt.title('correlation_matrix fail')
+plt.show()
+
+sns.pairplot(ratio_success.drop(columns=['IPO']))
+plt.suptitle('Scatter Plot fail', y=1.02)
+plt.show()
+
+
+
+########################machine learning##################################
+#create the machine learning models#
+
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+
+# Define feature (X) and response variable (y)
+X = df_ratio.drop(columns=['IPO'])
+y = df_ratio['IPO']
+
+# Divide in test and training set#
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+####Random Forest###
+
+model_rf = RandomForestClassifier(n_estimators=100, random_state=42)
+model_rf.fit(X_train, y_train)
+
+#Prediction#
+y_pred_rf = model_rf.predict(X_test)
+
+# evaluate perfromance#
+print("Random Forest Classifier:")
+print(f'Accuracy: {accuracy_score(y_test, y_pred_rf)}')
+print(f'Classification Report:\n{classification_report(y_test, y_pred_rf)}')
+print(f'Confusion Matrix:\n{confusion_matrix(y_test, y_pred_rf)}')
+
+##### Support Vector Machine(SVM)########
+model_svm = SVC(kernel='linear', C=1)
+model_svm.fit(X_train, y_train)
+
+#Prediction#
+y_pred_svm = model_svm.predict(X_test)
+
+# evaluate performance#
+print("\nSupport Vector Machine (SVM):")
+print(f'Accuracy: {accuracy_score(y_test, y_pred_svm)}')
+print(f'Classification Report:\n{classification_report(y_test, y_pred_svm)}')
+print(f'Confusion Matrix:\n{confusion_matrix(y_test, y_pred_svm)}')
+
+
+#visualize how much are significative the variabiles to obtain the prediction(using random forest)#
+importances = model_rf.feature_importances_
+
+# Create a  DataFrame to visualize the importance#
+feature_importance_df = pd.DataFrame({'Feature': X_train.columns, 'Importance': importances})
+feature_importance_df = feature_importance_df.sort_values(by='Importance', ascending=False)
+
+# Visualize with bar graph#
+plt.figure(figsize=(10, 6))
+sns.barplot(x='Importance', y='Feature', data=feature_importance_df, palette='viridis')
+plt.title('feature importance - Random Forest')
+plt.xlabel('Importance')
+plt.ylabel('Feature')
+plt.show()
+
+#view the confusion matrix for random forest#
+cm = confusion_matrix(y_test, y_pred_rf)
+
+cm_df = pd.DataFrame(cm, index=['Actual 0', 'Actual 1'], columns=['Predicted 0', 'Predicted 1'])
+
+plt.figure(figsize=(8, 6))
+sns.heatmap(cm_df, annot=True, fmt='d', cmap='Blues')
+plt.title('confusion matrix - Random Forest')
+plt.xlabel('Predicted')
+plt.ylabel('Real')
+plt.show()
+
+
+#view confuion matrix for svm#
+cm_svm = confusion_matrix(y_test, y_pred_svm)
+
+cm_svm_df = pd.DataFrame(cm_svm, index=['Actual 0', 'Actual 1'], columns=['Predicted 0', 'Predicted 1'])
+
+plt.figure(figsize=(8, 6))
+sns.heatmap(cm_svm_df, annot=True, fmt='d', cmap='Blues')
+plt.title("confusion matrix  - Support Vector Machine (SVM)")
+plt.xlabel('Predicted')
+plt.ylabel('Real')
+plt.show()
