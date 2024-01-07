@@ -82,6 +82,40 @@ This phase involves exploring the relationships between different financial rati
 
 - **Scatter Plots:** To complement the correlation matrix, scatter plots are used to visually represent pairwise relationships between specific variables.These plots offer a more intuitive understanding of how two variables interact, providing additional insights.
 
-want to see the graphs obtained? [click here](https://github.com/EdoPedrocchi/Predict-IPO-with-machine-learning/blob/main/code.with.results.pdf)
+Want to see the graphs obtained? [click here](https://github.com/EdoPedrocchi/Predict-IPO-with-machine-learning/blob/main/code.with.results.pdf)
 
+## Machine learning models
 
+first data were divided into training and test dataset. After, I trained 2 different models and compared the results.
+
+### Random forest
+
+This model obtained an accuracy of 0.6.
+To view the confusion matrix [click here](https://github.com/EdoPedrocchi/Predict-IPO-with-machine-learning/blob/main/code.with.results.pdf)
+
+According to the random forest the most significant variables are (in order from most significant to least significant):
+
+1.capital turnover
+
+2.EBITDA analysis
+
+3.ROS
+
+4.DSO
+
+5.ROI
+
+### SVM
+
+This model obtained an accuracy of 0.4.
+To view the confusion matrix [click here](https://github.com/EdoPedrocchi/Predict-IPO-with-machine-learning/blob/main/code.with.results.pdf)
+
+## Conclusion
+
+Too early to talk about the optimal model or parameters to be improved.
+Currently, the first goal of the project is to enlarge the dataset.
+Then new models will have to be developed, financial parameters added.
+
+above all, it will be necessary to start considering other variables, such as macroeconomic situation, geographical location, sector.
+
+see you soon
