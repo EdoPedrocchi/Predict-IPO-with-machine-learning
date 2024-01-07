@@ -62,7 +62,26 @@ Before continuing: the dataset consists of only 17 companies, which means that t
 Finding these kinds of companies and analyzing their financial statements takes time.
 So the number of data will increase over time, stay tuned.
 
+##EDA
 
+The datasets were analyzed separately:
+-a df for successful companies.
+-a df for the unsuccessful companies
 
+**Visualizations:**
+
+  - **Histograms:** This visualization method is employed to showcase the distribution of each variable. Histograms are effective in providing an overview of the frequency and concentration of data points within different ranges of financial ratios.
+
+  - **Boxplots:** The use of boxplots is directed at identifying outliers. Boxplots offer a clear representation of the spread of data, highlighting any extreme values or anomalies that may impact the analysis.
+
+**Correlation Analysis:**
+
+This phase involves exploring the relationships between different financial ratios
+
+- **Correlation Matrix:** By creating a correlation matrix, the project aims to quantify and visualize the degree of association between various financial variables. This matrix can reveal patterns of correlation or dependence, aiding in the identification of key factors influencing IPO success(or failure).
+
+- **Scatter Plots:** To complement the correlation matrix, scatter plots are used to visually represent pairwise relationships between specific variables.These plots offer a more intuitive understanding of how two variables interact, providing additional insights.
+
+want to see the graphs obtained? [click here](https://github.com/EdoPedrocchi/Predict-IPO-with-machine-learning/blob/main/code.with.results.pdf)
 
 
