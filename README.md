@@ -34,4 +34,35 @@ In alternative, [click here](https://github.com/EdoPedrocchi/Predict-IPO-with-ma
 Ok, I'm done. Now we can start with the description of the project
 
 ## TABLE OF CONTENTS
+### - Dataset
+### - EDA
+### - Machine learning models
+### - Conclusion
+
+## Dataset used
+the dataset is compsoed by companies that made an IPO that was either a success or a failure.
+Of these companies, I analyzed the financial statements for the year prior to the IPO and calculated indicators that are commonly used in financial analysis.
+The indicators used are as follows:
+
+-ROI
+
+-ROS
+
+-Capital turnover
+
+-Ebitda analysis
+
+-DSO
+
+-IPO (0=fail, 1=success)
+
+the goal is thus to understand whether companies that succeed or fail in IPOs are accumulated by the same financial value.
+
+Before continuing: the dataset consists of only 17 companies, which means that the ML models developed will not be very accurate.
+Finding these kinds of companies and analyzing their financial statements takes time.
+So the number of data will increase over time, stay tuned.
+
+
+
+
 
