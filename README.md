@@ -30,7 +30,4 @@ If you are interested in more information about the project, want to contribute 
 ok, I'm done. we can start
 
 ## TABLE OF CONTENTS
-###Dataset
-###EDA
-###Machine learning
 
