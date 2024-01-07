@@ -23,11 +23,14 @@ WHY THIS PROJECT?
 4. understand how to automate the  financial statements analysis with python
 5. more important: understand if it is possible to predict success or failure of a company IPO
 
-technology used: Python
+technology used: Python,YahooFinance Api
 
-so if you are interested in more information about the project, want to contribute or want to give me advice, please contact me.
+If you are interested in more information about the project, want to contribute or want to give me advice, please contact me.
 
 ok, I'm done. we can start
 
 ## TABLE OF CONTENTS
+###Dataset
+###EDA
+###Machine learning
 
